@@ -8,11 +8,11 @@ $error = "";
 $uvWarning = "";
 
 $skinTypes = [
-    'normaal' => 7,
-    'gemengd' => 6,
-    'gevoelig' => 5,
-    'droog' => 6,
-    'vet' => 7
+    'normaal' => 6,
+    'gemengd' => 5,
+    'gevoelig' => 4,
+    'droog' => 4,
+    'vet' => 6
 ];
 
 if (isset($_GET['city']) && !empty($_GET['city']) && isset($_GET['skin']) && isset($skinTypes[$_GET['skin']])) {
