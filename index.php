@@ -1,6 +1,6 @@
 <?php
 // Set your API key here
-$apiKey = "YOUR_API_KEY_HERE";
+$apiKey = "2f069fd5df69915753510caa24766538";
 $weatherData = null;
 $error = "";
 
