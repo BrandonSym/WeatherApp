@@ -1,6 +1,6 @@
 <?php
 $openWeatherApiKey = "2f069fd5df69915753510caa24766538";
-$openUvApiKey = "openuv-1rmfhrmcej5lso-io";
+$openUvApiKey = "openuv-1rmfhrmcek7rjy-io";
 
 $weatherData = null;
 $uvData = null;
@@ -73,6 +73,7 @@ if (isset($_GET['city']) && !empty($_GET['city']) && isset($_GET['skin']) && iss
         .weather { margin-top: 30px; border: 1px solid #ccc; border-radius: 8px; padding: 20px; display: inline-block; }
         .warning { color: darkred; font-weight: bold; margin-top: 10px; }
     </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
