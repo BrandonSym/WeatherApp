@@ -1,0 +1,301 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Main container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header */
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Form styling */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Input and select styling */
+input[type="text"], select {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    background: white;
+}
+
+input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #74b9ff;
+    box-shadow: 0 0 0 3px rgba(116, 185, 255, 0.1);
+}
+
+input[type="text"]:hover, select:hover {
+    border-color: #74b9ff;
+}
+
+/* Submit button */
+input[type="submit"] {
+    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #00a085 0%, #008f75 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Weather card */
+.weather {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    border: none;
+    display: block;
+}
+
+.weather h2 {
+    color: #2d3436;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.weather p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.weather p:last-child {
+    border-bottom: none;
+}
+
+.weather p strong {
+    color: #2d3436;
+    font-weight: 600;
+    min-width: 150px;
+    text-align: left;
+}
+
+/* UV Index specific styling */
+.weather p:has(strong:contains("UV-index")) {
+    background: linear-gradient(90deg, #ffeaa7 0%, #fdcb6e 100%);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    border: none;
+    font-weight: 600;
+}
+
+/* Warning message */
+.warning {
+    background: linear-gradient(135deg, #ff7675 0%, #e84393 100%);
+    color: white !important;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(255, 118, 117, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Error message */
+p[style*="color: red"] {
+    background: #ff7675;
+    color: white !important;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Temperature highlight */
+.weather p:has(strong:contains("Temperatuur")) {
+    background: linear-gradient(90deg, #74b9ff 0%, #0984e3 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    border: none;
+    font-weight: 600;
+}
+
+.weather p:has(strong:contains("Temperatuur")) strong {
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    form {
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    input[type="text"], select, input[type="submit"] {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .weather {
+        padding: 20px;
+    }
+    
+    .weather p {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .weather p strong {
+        min-width: auto;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    form {
+        padding: 15px;
+    }
+    
+    .weather {
+        padding: 15px;
+    }
+    
+    .weather h2 {
+        font-size: 1.4rem;
+    }
+    
+    .weather p {
+        font-size: 1rem;
+    }
+}
+
+/* Loading animation for better UX */
+.weather.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.weather.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Hover effects */
+.weather:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+/* Select dropdown styling */
+select option {
+    padding: 10px;
+}
+
+/* Focus indicators for accessibility */
+input:focus, select:focus {
+    outline: 2px solid #74b9ff;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .weather {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    form {
+        display: none;
+    }
+}
